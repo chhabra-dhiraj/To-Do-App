@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">To-Do</string>
+    <string name="title_search_menu_item">Search To-Do</string>
+    <string name="title_add_new_to_do_menu_item">Add New To-Do</string>
+    <string name="content_description_complete_to_do">Complete To-Do</string>
+    <string name="content_description_delete_to_do">Delete To-Do</string>
+    <string name="content_description_undo_complete_to_do">Undo Complete To-Do</string>
 </resources>
