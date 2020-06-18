@@ -18,6 +18,9 @@ This is a To-Do Application for Android Devices
     </tr>
 </table>
 
+## Demo Video of the app -
+[a link](https://youtu.be/fg4ttbobaVM)
+
 ## Tech Stack
 <ul>
   <li>MVVM (Model-View-ViewModel)</li>
