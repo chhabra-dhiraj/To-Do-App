@@ -1,17 +1,22 @@
 # To-Do
 This is a To-Do Application for Android Devices
 
-<!-- ## Screenshots -
+## Screenshots -
 <table>
     <tr>
-        <td><img src="/app/screenshots/1.png?raw=true"></td>
-        <td><img src="/app/screenshots/2.png?raw=true"></td>
+        <td><img src="/app/screenshots/1.jpeg?raw=true"></td>
+        <td><img src="/app/screenshots/2.jpeg?raw=true"></td>
+        <td><img src="/app/screenshots/3.jpeg?raw=true"></td>
     </tr>
     <tr>
-        <td><img src="/app/screenshots/3.png?raw=true"></td>
-        <td><img src="/app/screenshots/4.png?raw=true"></td>
+        <td><img src="/app/screenshots/4.jpeg?raw=true"></td>
+        <td><img src="/app/screenshots/5.jpeg?raw=true"></td>
+        <td><img src="/app/screenshots/6.jpeg?raw=true"></td>
     </tr>
-</table> -->
+    <tr>
+        <td><img src="/app/screenshots/7.jpeg?raw=true"></td>
+    </tr>
+</table>
 
 ## Tech Stack
 <ul>
