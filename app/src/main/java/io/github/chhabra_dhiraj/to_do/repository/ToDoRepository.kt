@@ -2,6 +2,7 @@ package io.github.chhabra_dhiraj.to_do.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
+import io.github.chhabra_dhiraj.to_do.database.DatabaseToDo
 import io.github.chhabra_dhiraj.to_do.database.ToDoDao
 import io.github.chhabra_dhiraj.to_do.database.asDomainModel
 import io.github.chhabra_dhiraj.to_do.domain.ToDo
@@ -13,8 +14,8 @@ class ToDoRepository(private val toDoDao: ToDoDao) {
         it.asDomainModel()
     }
 
-    suspend fun insertToDo(toDo: ToDo) {
-        toDoDao.insertToDo(toDo.asDatabaseModel())
+    suspend fun insertToDo(newToDoText: String) {
+        toDoDao.insertToDo(DatabaseToDo(0, newToDoText, false))
     }
 
     suspend fun updateCompleted(completed: Boolean, toDoId: Int) {

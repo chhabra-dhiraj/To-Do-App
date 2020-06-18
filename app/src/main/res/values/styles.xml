@@ -10,6 +10,7 @@
     </style>
 
     // For launch/splash screen of the app
+
     <style name="AppTheme.Launcher" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
@@ -18,9 +19,17 @@
     </style>
 
     // To-Do Toolbar Style
+
     <style name="toDoToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
-        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingEnd">8dp</item>
         <item name="android:paddingTop">12dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="toDoToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">24sp</item>
     </style>
 
 </resources>

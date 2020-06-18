@@ -1,43 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_scroll_view_main_content"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.github.chhabra_dhiraj.to_do.viewmodels.ToDoViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_to_do"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view_main_content"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_to_do"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:toDoList="@{viewModel.toDos}"
+                tools:itemCount="10"
+                tools:listitem="@layout/to_do_recycler_view_item" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout_to_do"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_to_do"
+                style="@style/toDoToolbarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextAppearance="@style/toDoToolbarTitleStyle" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/tv_no_to_do"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:scrollbars="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="10"
-            tools:listitem="@layout/to_do_recycler_view_item" />
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/string_no_to_do"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:toDoListAvailable="@{viewModel.toDos}"
+            tools:visibility="visible" />
 
-    </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout_to_do"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_to_do"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            style="@style/toDoToolbarStyle"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:menu="@menu/main_overflow_menu"
-            app:titleTextColor="@android:color/white" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
