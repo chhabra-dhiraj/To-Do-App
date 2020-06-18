@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/app_bar_search_menu_item"
         android:icon="@drawable/ic_baseline_search_48"
         android:title="@string/title_search_menu_item"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/to_do_menu_item"
+        android:id="@+id/add_new_to_do_menu_item"
         android:icon="@drawable/ic_baseline_add_circle_outline_48"
         android:title="@string/title_add_new_to_do_menu_item"
         app:showAsAction="ifRoom" />

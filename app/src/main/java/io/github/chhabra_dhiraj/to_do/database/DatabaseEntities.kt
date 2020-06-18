@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import io.github.chhabra_dhiraj.to_do.domain.ToDo
 
 @Entity(tableName = "to_do_table")
-data class DatabaseToDo constructor(
+data class DatabaseToDo(
     @PrimaryKey(autoGenerate = true)
     val toDoId: Int,
     val title: String,

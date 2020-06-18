@@ -26,6 +26,15 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     buildFeatures {
         dataBinding true
     }
@@ -89,6 +98,12 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$version_recycler_view"
     // For control over item selection of both touch and mouse driven selection
     implementation "androidx.recyclerview:recyclerview-selection:$version_recycler_view_selection"
+
+    // Activity ktx dependency
+    implementation "androidx.activity:activity-ktx:$version_activity"
+
+    // Fragment ktx dependency
+    implementation "androidx.fragment:fragment-ktx:$version_fragment"
 
     // Unit Testing dependency
     testImplementation "junit:junit:$version_junit"

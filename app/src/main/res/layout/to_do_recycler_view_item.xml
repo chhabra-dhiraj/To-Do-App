@@ -1,60 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="2dp"
-    android:background="@android:color/white"
-    android:padding="16dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tv_to_do"
-        android:layout_width="wrap_content"
+    <data>
+
+        <variable
+            name="toDo"
+            type="io.github.chhabra_dhiraj.to_do.domain.ToDo" />
+
+        <variable
+            name="toDoListener"
+            type="io.github.chhabra_dhiraj.to_do.ui.adapters.ToDoListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imv_complete_to_do"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Grab a cup of Coffee" />
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/white"
+        android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imv_complete_to_do"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/content_description_complete_to_do"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_check_circle_48" />
+        <TextView
+            android:id="@+id/tv_to_do"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@{toDo.title}"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strikeThrough="@{toDo}"
+            tools:text="Grab a cup of Coffee" />
 
-    <ImageView
-        android:id="@+id/imv_delete_to_do"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/content_description_delete_to_do"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_delete_48" />
+        <ImageView
+            android:id="@+id/imv_complete_to_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_description_complete_to_do"
+            android:onClick="@{() -> toDoListener.onCompleteClick(toDo)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_check_circle_36"
+            app:toDoVisibility="@{toDo}" />
 
-    <ImageView
-        android:id="@+id/imv_undo_complete_to_do"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/content_description_undo_complete_to_do"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/imv_delete_to_do"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/tv_to_do"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_undo_48" />
+        <ImageView
+            android:id="@+id/imv_delete_to_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_description_delete_to_do"
+            android:onClick="@{() -> toDoListener.onDeleteClick(toDo)}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_delete_36"
+            app:toDoVisibility="@{toDo}" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imv_undo_complete_to_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/content_description_undo_complete_to_do"
+            android:onClick="@{() -> toDoListener.onUndoCompleteClick(toDo)}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imv_delete_to_do"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/tv_to_do"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_undo_36"
+            app:toDoVisibility="@{toDo}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

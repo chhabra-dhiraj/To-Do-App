@@ -5,4 +5,8 @@
     <string name="content_description_complete_to_do">Complete To-Do</string>
     <string name="content_description_delete_to_do">Delete To-Do</string>
     <string name="content_description_undo_complete_to_do">Undo Complete To-Do</string>
+    <string name="hint_input_new_to_do">Start typing…</string>
+    <string name="label_button_add_to_do">Add Task</string>
+    <string name="add_new_to_do_error_message">Nothing added yet</string>
+    <string name="string_no_to_do">No To-Do present. Click on the + button to add one.</string>
 </resources>
