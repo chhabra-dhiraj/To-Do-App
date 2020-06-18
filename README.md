@@ -19,7 +19,7 @@ This is a To-Do Application for Android Devices
 </table>
 
 ## Demo Video of the app -
-[a link](https://youtu.be/fg4ttbobaVM)
+<a href="https://www.youtube.com/watch?v=fg4ttbobaVM&feature=youtu.be">Click Here</a>
 
 ## Tech Stack
 <ul>
